@@ -1,0 +1,53 @@
+{% load i18n %}
+
+<div class="card-header border-0 pt-6">
+
+    <!--begin::Card title-->
+    <div class="card-title">
+        <!--begin::Search-->
+        <div class="d-flex align-items-center position-relative my-1">
+            <i class="ki-outline ki-magnifier fs-3 position-absolute ms-5"></i>
+            <input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-13" placeholder="{% blocktranslate %}Search {{ page|title }}{% endblocktranslate %}" />
+        </div>
+        <!--end::Search-->
+    </div>
+    <!--begin::Card title-->
+
+    <!--begin::Card toolbar-->
+    <div class="card-toolbar">
+        <!--begin::Toolbar-->
+        <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
+            <!--begin::Filter-->
+            <div class="w-150px me-3">
+                <!--begin::Select2-->
+                <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Status" data-kt-ecommerce-order-filter="status">
+                    <option></option>
+                    <option value="all">All</option>
+                    <option value="active">Active</option>
+                    <option value="locked">Locked</option>
+                </select>
+                <!--end::Select2-->
+            </div>
+            <!--end::Filter-->
+            <!--begin::Export-->
+            <button type="button" class="btn btn-light-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_customers_export_modal">
+            <i class="ki-outline ki-exit-up fs-2"></i>Export</button>
+            <!--end::Export-->
+            <!--begin::Add customer-->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="{{ add_modal }}">Add {{ page|title }}</button>
+            <!--end::Add customer-->
+        </div>
+        <!--end::Toolbar-->
+        <!--begin::Group actions-->
+        <div class="d-flex justify-content-end align-items-center d-none" data-kt-customer-table-toolbar="selected">
+            <div class="fw-bold me-5">
+            <span class="me-2" data-kt-customer-table-select="selected_count"></span>Selected</div>
+            <button type="button" class="btn btn-danger" data-kt-customer-table-select="delete_selected">Delete Selected</button>
+        </div>
+        <!--end::Group actions-->
+    </div>
+    <!--end::Card toolbar-->
+    
+</div>
+
+
